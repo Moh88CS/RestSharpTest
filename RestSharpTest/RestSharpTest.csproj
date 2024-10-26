@@ -10,10 +10,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\Create\DeleteBoardsValidation.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\Delete\GetBoardsValidation.feature.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="coverlet.collector" Version="6.0.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="CucumberExpressions.SpecFlow.3-9" Version="1.0.7" />
+    <PackageReference Include="ExtentReports" Version="5.0.4" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
     <PackageReference Include="Newtonsoft.Json.Schema" Version="4.0.1" />
     <PackageReference Include="NUnit" Version="4.2.2" />
@@ -23,6 +30,9 @@
     </PackageReference>
     <PackageReference Include="NUnit3TestAdapter" Version="4.6.0" />
     <PackageReference Include="RestSharp" Version="112.1.0" />
+    <PackageReference Include="SpecFlow" Version="3.9.74" />
+    <PackageReference Include="SpecFlow.NUnit" Version="3.9.74" />
+    <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.9.74" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,6 +41,15 @@
 
   <ItemGroup>
     <Folder Include="Resources\Schemas\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Features\Create\CreateBoardsValidation.feature.cs">
+      <DependentUpon>CreateBoardsValidation.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Features\Delete\DeleteBoardsValidation.feature.cs">
+      <DependentUpon>DeleteBoardsValidation.feature</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -46,6 +65,17 @@
     <None Update="Resources\Schemas\get_cards.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <SpecFlowFeatureFiles Update="Features\Create\CreateBoardsValidation.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\Delete\DeleteBoardsValidation.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
   </ItemGroup>
 
 </Project>
