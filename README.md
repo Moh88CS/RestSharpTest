@@ -28,3 +28,8 @@ Before you begin, ensure you have the following installed:
    ```bash
    git clone https://github.com/Moh88CS/RestSharpTest.git
    cd RestSharpTest
+   dotnet restore
+   dotnet test
+
+## Reporting
+NUnit generates detailed test execution reports, which can be viewed in your IDE or CI/CD pipeline. For SpecFlow, you can use plugins like SpecFlow+ LivingDoc or Allure to generate interactive and detailed reports.
