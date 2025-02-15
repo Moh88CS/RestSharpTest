@@ -31,5 +31,11 @@ Before you begin, ensure you have the following installed:
    dotnet restore
    dotnet test
 
+2. **If you get some errors with NuGet packages, try checking your nuget sources**
+   ```bash
+   dotnet nuget list source
+   dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org
+   dotnet restore
+
 ## Reporting
 NUnit generates detailed test execution reports, which can be viewed in your IDE or CI/CD pipeline. For SpecFlow, you can use plugins like SpecFlow+ LivingDoc or Allure to generate interactive and detailed reports.
