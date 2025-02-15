@@ -31,6 +31,6 @@ Scenario Outline: Check Delete Board With Invalid Auth
 Examples:
 	| key              | token              | error_message                     |
 	| current_user_key | empty_value        | unauthorized permission requested |
-	| empty_value      | current_user_token | invalid app key                   |
+	| empty_value      | current_user_token | invalid key                       |
 	| empty_value      | empty_value        | unauthorized permission requested |
-	| another_user_key | another_user_token | invalid token                     |
+	| another_user_key | another_user_token | invalid key                       |

@@ -124,9 +124,9 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Check Get Board With Invalid Auth")]
         [NUnit.Framework.TestCaseAttribute("current_user_key", "empty_value", "unauthorized permission requested", null)]
-        [NUnit.Framework.TestCaseAttribute("empty_value", "current_user_token", "invalid app key", null)]
+        [NUnit.Framework.TestCaseAttribute("empty_value", "current_user_token", "invalid key", null)]
         [NUnit.Framework.TestCaseAttribute("empty_value", "empty_value", "unauthorized permission requested", null)]
-        [NUnit.Framework.TestCaseAttribute("another_user_key", "another_user_token", "invalid token", null)]
+        [NUnit.Framework.TestCaseAttribute("another_user_key", "another_user_token", "invalid key", null)]
         public void CheckGetBoardWithInvalidAuth(string key, string token, string error_Message, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
