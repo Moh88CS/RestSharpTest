@@ -125,7 +125,7 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Check Create Board With Invalid Auth")]
         [NUnit.Framework.TestCaseAttribute("current_user_key", "empty_value", "unauthorized permission requested", null)]
-        [NUnit.Framework.TestCaseAttribute("empty_value", "current_user_token", "invalid app key", null)]
+        [NUnit.Framework.TestCaseAttribute("empty_value", "current_user_token", "invalid key", null)]
         [NUnit.Framework.TestCaseAttribute("empty_value", "empty_value", "unauthorized permission requested", null)]
         public void CheckCreateBoardWithInvalidAuth(string key, string token, string error_Message, string[] exampleTags)
         {
