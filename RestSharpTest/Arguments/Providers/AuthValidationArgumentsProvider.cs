@@ -35,7 +35,7 @@ internal class AuthValidationArgumentsProvider : IEnumerable
                 [
                     Parameter.CreateParameter("token", UrlParamValues.ValidToken, ParameterType.QueryString)
                 ],
-                ErrorMessage = "invalid app key"
+                ErrorMessage = "invalid key"
             }
         };
     }

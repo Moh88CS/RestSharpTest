@@ -42,6 +42,6 @@ internal class UpdateBoardValidationTest : BaseTest
             .AddJsonBody(new Dictionary<string, string> { { "name", "Updated Name" } });
         var response = await _client.ExecutePutAsync(request); // read note
         Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.Unauthorized));
-        Assert.That(response.Content, Is.EqualTo("invalid token"));
+        Assert.That(response.Content, Is.EqualTo("invalid key"));
     }
 }

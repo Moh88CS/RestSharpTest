@@ -39,7 +39,7 @@ internal class GetCardsValidationTest : BaseTest
             .AddUrlSegment("id", UrlParamValues.ExistingCardId);
         var response = await _client.ExecuteGetAsync(request); // read note
         Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.Unauthorized));
-        Assert.That(response.Content, Is.EqualTo("invalid token"));
+        Assert.That(response.Content, Is.EqualTo("invalid key"));
     }
 }
 

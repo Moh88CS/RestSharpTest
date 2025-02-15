@@ -40,6 +40,6 @@ internal class DeleteBoardValidationTest : BaseTest
             .AddUrlSegment("id", UrlParamValues.ExistingBoardId);
         var response = await _client.ExecuteDeleteAsync(request); // read note
         Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.Unauthorized));
-        Assert.That(response.Content, Is.EqualTo("invalid token"));
+        Assert.That(response.Content, Is.EqualTo("invalid key"));
     }
 }
